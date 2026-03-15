@@ -138,6 +138,73 @@ function Modal({ p, onClose }:{ p:Project; onClose:()=>void }) {
 }
 
 /* ═══════════════════════════════════
+   CONTACT FORM
+   ═══════════════════════════════════ */
+function ContactForm() {
+  const [form, setForm] = useState({ name:"", email:"", message:"" });
+  const [status, setStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name || !form.email || !form.message) return;
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/mvgkjqwz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+      });
+      if (res.ok) { setStatus("sent"); setForm({ name:"", email:"", message:"" }); }
+      else setStatus("error");
+    } catch { setStatus("error"); }
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width:"100%", padding:"12px 16px", borderRadius:10, border:"1px solid rgba(255,255,255,0.08)",
+    background:"rgba(255,255,255,0.03)", color:"var(--text)", fontSize:14, fontFamily:"'Outfit',sans-serif",
+    outline:"none", transition:"border-color 0.2s",
+  };
+
+  return (
+    <div className="gc" style={{ padding:32 }}>
+      <h3 className="serif" style={{ fontSize:24,fontStyle:"italic",fontWeight:400,color:"var(--text)",marginBottom:6 }}>Ready to collaborate?</h3>
+      <p style={{ fontSize:13,color:"var(--text3)",marginBottom:20,lineHeight:1.5 }}>Send me a message directly.</p>
+
+      {status === "sent" ? (
+        <div style={{ textAlign:"center",padding:"28px 0" }}>
+          <div style={{ fontSize:32,marginBottom:10 }}>✅</div>
+          <p style={{ color:"var(--accent)",fontSize:15,fontWeight:600,marginBottom:6 }}>Message sent!</p>
+          <p style={{ color:"var(--text3)",fontSize:13 }}>I&apos;ll get back to you soon.</p>
+          <button onClick={()=>setStatus("idle")} style={{ marginTop:16,padding:"8px 20px",borderRadius:8,border:"1px solid rgba(255,255,255,0.1)",background:"transparent",color:"var(--text2)",fontSize:12,cursor:"pointer",transition:"0.2s" }}
+            onMouseEnter={(e)=>{e.currentTarget.style.borderColor="var(--accent)";e.currentTarget.style.color="var(--accent)";}}
+            onMouseLeave={(e)=>{e.currentTarget.style.borderColor="rgba(255,255,255,0.1)";e.currentTarget.style.color="var(--text2)";}}>
+            Send another
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} style={{ display:"flex",flexDirection:"column",gap:12 }}>
+          <input type="text" placeholder="Your name" value={form.name} onChange={(e)=>setForm({...form,name:e.target.value})} required style={inputStyle}
+            onFocus={(e)=>e.currentTarget.style.borderColor="var(--accent)"}
+            onBlur={(e)=>e.currentTarget.style.borderColor="rgba(255,255,255,0.08)"} />
+          <input type="email" placeholder="Your email" value={form.email} onChange={(e)=>setForm({...form,email:e.target.value})} required style={inputStyle}
+            onFocus={(e)=>e.currentTarget.style.borderColor="var(--accent)"}
+            onBlur={(e)=>e.currentTarget.style.borderColor="rgba(255,255,255,0.08)"} />
+          <textarea placeholder="Your message" value={form.message} onChange={(e)=>setForm({...form,message:e.target.value})} required rows={4} style={{...inputStyle,resize:"vertical",minHeight:100}}
+            onFocus={(e)=>e.currentTarget.style.borderColor="var(--accent)"}
+            onBlur={(e)=>e.currentTarget.style.borderColor="rgba(255,255,255,0.08)"} />
+          {status === "error" && <p style={{ color:"var(--coral)",fontSize:12 }}>Something went wrong. Try again or email me directly.</p>}
+          <button type="submit" disabled={status==="sending"} style={{ padding:"12px 28px",borderRadius:8,background: status==="sending" ? "var(--accent2)" : "var(--accent)",color:"var(--bg)",fontWeight:700,fontSize:13,border:"none",cursor: status==="sending" ? "wait" : "pointer",transition:"0.3s",opacity: status==="sending" ? 0.7 : 1 }}
+            onMouseEnter={(e)=>{if(status!=="sending"){e.currentTarget.style.transform="translateY(-2px)";e.currentTarget.style.boxShadow="0 8px 24px rgba(232,201,110,0.25)";}}}
+            onMouseLeave={(e)=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow="none";}}>
+            {status === "sending" ? "Sending..." : "Send message →"}
+          </button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════
    PAGE
    ═══════════════════════════════════ */
 export default function Home() {
@@ -365,15 +432,7 @@ export default function Home() {
                 </a>
               ))}
             </div>
-            <div className="gc" style={{ padding:36,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center" }}>
-              <h3 className="serif" style={{ fontSize:26,fontStyle:"italic",fontWeight:400,color:"var(--text)",marginBottom:10 }}>Ready to collaborate?</h3>
-              <p style={{ fontSize:13,color:"var(--text3)",marginBottom:24,lineHeight:1.6 }}>Full-time, contract, or partnerships.</p>
-              <a href="mailto:muhammadumer7574@gmail.com" style={{ padding:"12px 28px",borderRadius:8,background:"var(--accent)",color:"var(--bg)",fontWeight:700,fontSize:13,textDecoration:"none",transition:"0.3s" }}
-                onMouseEnter={(e)=>{e.currentTarget.style.transform="translateY(-2px)";e.currentTarget.style.boxShadow="0 8px 24px rgba(232,201,110,0.25)";}}
-                onMouseLeave={(e)=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow="none";}}>
-                Send email →
-              </a>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
