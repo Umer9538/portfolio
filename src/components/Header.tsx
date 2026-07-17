@@ -7,6 +7,7 @@ const NAV = [
   { href: "#ledger", label: "Ledger" },
   { href: "#method", label: "Method" },
   { href: "#record", label: "Prior record" },
+  { href: "#apps", label: "Apps" },
   { href: "#register", label: "Register" },
 ];
 

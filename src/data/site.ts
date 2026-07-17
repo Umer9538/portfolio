@@ -253,6 +253,7 @@ export const REGISTER: RegisterEntry[] = [
   { id: "e10", no: "E10", claim: "Adversarial audit rounds with executable probes; dozens of confirmed defects fixed and locked as regression tests", artifact: "commit history: audit-fix commits per repo", href: LINKS.github, linkLabel: "audit commits" },
   { id: "e11", no: "E11", claim: "golden_lens attributes a visual diff to the owning widget and source line", artifact: "attribution engine + report schema", href: LINKS.pub.golden_lens, linkLabel: "pub.dev/packages/golden_lens" },
   { id: "e12", no: "E12", claim: "3+ years shipping production mobile apps (fintech, healthcare/NFC, SaaS)", artifact: "client work & app record", href: LINKS.linkedin, linkLabel: "LinkedIn" },
+  { id: "e13", no: "E13", claim: "14 client apps shipped 2022–2026; the AI learning platform and maternity-care bot were acquired by investors (built at DriftMeta)", artifact: "app briefs in Section 07 + work history", href: LINKS.linkedin, linkLabel: "LinkedIn" },
 ];
 
 export const METHOD_ROWS = [
@@ -267,31 +268,74 @@ export const METHOD_ROWS = [
 
 export const EXPERIENCE = [
   {
-    period: "2024 — 2026",
-    role: "Senior Full-Stack Engineer",
+    period: "2025 — present",
+    role: "Senior Mobile App Developer",
+    org: "Infinitiv.AI",
+    loc: "Lahore",
+    line: "Production mobile apps with Flutter, React Native, and native modules — BLE, WebSocket, speech-to-text — deployed on AWS with Docker.",
+    badge: "Flutter · RN · AWS · BLE",
+  },
+  {
+    period: "2025 — 2026",
+    role: "App Developer",
+    org: "DriftMeta",
+    loc: "Remote",
+    line: "Built two investor-acquired products end to end: an AI learning platform (LangChain/OpenAI, live WebRTC classrooms, AI code evaluation) and a maternity-care AI chatbot.",
+    badge: "Flutter · LangChain · OpenAI",
+  },
+  {
+    period: "2024 — 2025",
+    role: "Senior Full Stack Engineer",
     org: "Vireon Solutions",
-    line: "Two investor-acquired products: an AI learning app (LangChain/OpenAI RAG) and a maternity chatbot — full lifecycle, mobile + backend.",
-    badge: "Flutter · RN · AI",
+    loc: "Islamabad",
+    line: "AI-driven apps with TensorFlow, PyTorch and LangChain — NLP, speech recognition, and RAG architectures in production.",
+    badge: "TensorFlow · PyTorch · RAG",
   },
   {
     period: "2023 — 2024",
-    role: "Full-Stack Developer",
-    org: "Healthcare / IoT client",
-    line: "NFC medical profiles for first responders: offline encrypted wristband data, biometric auth + 2FA, AWS/PostgreSQL backend, RBAC dashboard.",
-    badge: "Flutter · native NFC",
+    role: "Associate Full Stack Engineer",
+    org: "Vireon Solutions",
+    loc: "Islamabad",
+    line: "Web and mobile apps with Flutter, React Native and React.js — AI integration and performance optimization.",
+    badge: "Flutter · RN · React.js",
   },
-  {
-    period: "2022 — 2024",
-    role: "Lead Flutter Developer",
-    org: "Construction SaaS client",
-    line: "Construction management platform: live budget tracking, milestone-based Stripe payments, contractor marketplace, multi-role collaboration.",
-    badge: "Flutter · Stripe",
-  },
-  {
-    period: "2022 — 2023",
-    role: "Mobile Developer",
-    org: "Travel client",
-    line: "AI travel companion for Saudi Arabia — Gemini-generated itineraries, offline maps, multi-language support.",
-    badge: "Flutter · Gemini",
-  },
+];
+
+export type ClientApp = {
+  year: string;
+  name: string;
+  cat: string;
+  role: string;
+  desc: string;
+  full: string;
+  features: string[];
+  tech: string[];
+  github?: string;
+  acquired?: boolean;
+};
+
+export const CLIENT_APPS: ClientApp[] = [
+  { year: "2025", name: "First Air Tag", cat: "Healthcare / IoT", role: "Full Stack Developer", desc: "NFC medical profiles for first responders — offline encrypted data via wristbands.", full: "A life-saving NFC platform storing encrypted health profiles on wristbands. First responders tap devices to access allergies, blood type, and medications — offline, without internet. HIPAA-compliant with QR fallback.", features: ["NFC read/write with encrypted medical data", "Offline-first emergency architecture", "Admin dashboard (Next.js) with RBAC", "Biometric auth + 2FA + JWT sessions", "AWS EC2 backend with PostgreSQL", "QR code fallback for non-NFC devices"], tech: ["React Native", "Next.js", "PostgreSQL", "NFC", "AWS"], github: "https://github.com/Umer9538/NFCAPP" },
+  { year: "2024", name: "AI Learning Platform", cat: "EdTech / AI", role: "Full Stack Developer", desc: "AI courseware with real-time coding evaluation.", full: "AI education platform adapting to each student: real-time code evaluation, live video classrooms, gamification. Acquired after strong beta engagement.", features: ["Adaptive learning paths", "AI code evaluation", "Live WebRTC classrooms", "Progress analytics", "Auto quiz generation", "Gamified leaderboards"], tech: ["Flutter", "LangChain", "OpenAI", "WebRTC"], acquired: true },
+  { year: "2024", name: "Maternity Care Bot", cat: "Healthcare / AI", role: "Full Stack Developer", desc: "AI medical assistant for expecting mothers.", full: "AI chatbot for pregnant mothers — health advice, symptom tracking, appointments, and community, built for an emerging-market healthcare gap.", features: ["Maternal health AI chatbot", "Pregnancy milestone tracking", "Symptom severity alerts", "Doctor appointments", "Meal planning", "Community forum"], tech: ["Flutter", "Node.js", "Firebase"], acquired: true },
+  { year: "2024", name: "BuildBuddy", cat: "Construction / SaaS", role: "Lead Flutter Developer", desc: "Construction management with live budgets, Stripe payments, and multi-role collaboration.", full: "All-in-one construction app for homeowners and contractors: budgets, milestones, a contractor marketplace, and Stripe payments with role-based dashboards.", features: ["Real-time budget tracking", "Contractor marketplace", "Milestone-based Stripe payments", "Photo progress docs", "Google Maps integration", "Push notification alerts"], tech: ["Flutter", "Firebase", "Stripe", "Maps"], github: "https://github.com/Umer9538/budgetBot" },
+  { year: "2024", name: "Mershad", cat: "Travel / AI", role: "Mobile Developer", desc: "AI travel companion for Saudi Arabia — Gemini itineraries and offline maps.", full: "Intelligent travel companion for Saudi Arabia using Gemini 1.5 Flash: personalized itineraries, hotel booking, an AI chatbot, and offline navigation across 5 cities.", features: ["Gemini AI itineraries", "Hotel & experience booking", "Offline maps with navigation", "Multi-language support", "Emergency SOS", "Cultural recommendations"], tech: ["Flutter", "Gemini API", "Google Maps"] },
+  { year: "2024", name: "CloudKey", cat: "Hospitality", role: "Backend Developer", desc: "Hotel management with NFC digital keys and multi-language support.", full: "Cloud hotel management replacing physical keys with NFC/barcode digital keys — automated check-in, reservation management, Docker deployment.", features: ["NFC/barcode digital keys", "Reservation management", "Multi-factor auth", "Multi-language support", "Payment processing", "Docker deployment"], tech: ["Cloud", "NFC", "Docker", "REST APIs"], github: "https://github.com/Umer9538/CloudKey" },
+  { year: "2024", name: "ServiceMate", cat: "SaaS", role: "Full Stack Developer", desc: "White-label booking SaaS for salons, clinics, and studios.", full: "White-label booking SaaS: custom booking pages, automated reminders, payments, and CRM.", features: ["Custom booking pages", "Automated reminders", "Staff scheduling", "Invoicing", "CRM with history", "Revenue analytics"], tech: ["TypeScript", "Next.js", "SaaS"], github: "https://github.com/Umer9538/ServiceMate" },
+  { year: "2024", name: "GroceryMate", cat: "Lifestyle", role: "Flutter Developer", desc: "Smart grocery list with barcode scanning and family sharing.", full: "Scan barcodes, compare prices, share lists with family in real time, with AI suggestions from purchase history.", features: ["Barcode scanning", "Family list sharing", "Price comparison", "Spending analytics", "Smart suggestions", "Aisle categorization"], tech: ["Flutter", "Firebase", "Barcode API"] },
+  { year: "2023", name: "SecurePay", cat: "FinTech", role: "Mobile Developer", desc: "Encrypted payments with Stripe and biometric auth.", full: "Secure payment app with end-to-end encryption, spending analytics, Stripe integration, budgets, and biometric login.", features: ["E2E encrypted payments", "Stripe integration", "Category analytics", "Budget alerts", "CSV/PDF export", "Biometric auth"], tech: ["Flutter", "Firebase", "Stripe"] },
+  { year: "2023", name: "HealthSync", cat: "Healthcare", role: "Flutter Developer", desc: "Health tracker with AI insights and telemedicine.", full: "Health management combining fitness tracking, medication management, and telemedicine with AI analysis.", features: ["AI fitness insights", "Medication tracking", "Video telemedicine", "Health dashboard", "Wearable integration", "Shareable reports"], tech: ["Flutter", "AI", "Firebase"] },
+  { year: "2023", name: "AI Chatbot", cat: "AI", role: "Mobile Developer", desc: "GPT-powered assistant with specialized modes.", full: "GPT-powered chatbot with multi-turn conversations; code, writing, and research modes; customizable personality; export.", features: ["Multi-turn dialogue", "Code/writing/research modes", "History search", "Custom personality", "Syntax highlighting", "PDF export"], tech: ["Flutter", "OpenAI API", "NLP"] },
+  { year: "2023", name: "Insaf", cat: "LegalTech", role: "React Native Developer", desc: "Legal platform connecting citizens with lawyers in Pakistan.", full: "Legal tech connecting citizens and lawyers: find lawyers, book consultations, track cases.", features: ["Lawyer directory", "Consultation booking", "Case tracking", "Secure messaging", "Legal resources", "Rating system"], tech: ["TypeScript", "React Native"], github: "https://github.com/Umer9538/insaf" },
+  { year: "2023", name: "CJE", cat: "EdTech", role: "Flutter Developer", desc: "School community platform for parents and teachers.", full: "School community platform — announcements, events, attendance, grades, and parent-teacher messaging.", features: ["Real-time announcements", "Event RSVP", "Attendance tracking", "Grade portal", "Messaging system", "Fee management"], tech: ["Flutter", "Firebase"], github: "https://github.com/Umer9538/CJE" },
+  { year: "2022", name: "Mundial Manager", cat: "Sports", role: "Flutter Developer", desc: "FIFA World Cup fantasy game with live scores.", full: "World Cup fantasy — build teams, compete on leaderboards, live scores, dynamic scoring, player trading.", features: ["Fantasy team building", "Live scores & stats", "Global leaderboards", "Dynamic scoring", "Player trading", "Goal notifications"], tech: ["Flutter", "REST APIs"], github: "https://github.com/Umer9538/Mundial-Manager" },
+];
+
+export const SKILLS = [
+  { group: "Mobile", tags: ["Flutter", "React Native", "Kotlin", "Swift", "Java", "Dart", "Expo"] },
+  { group: "Frontend", tags: ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Zustand", "GSAP", "Framer Motion"] },
+  { group: "Backend", tags: ["Node.js", "Express", "FastAPI", "Django", "Laravel", "GraphQL", "REST APIs", "Socket.io", "Prisma"] },
+  { group: "AI / ML", tags: ["LangChain", "OpenAI", "Gemini", "TensorFlow", "PyTorch", "RAG", "FAISS", "ChromaDB", "NLP", "Hugging Face"] },
+  { group: "Database", tags: ["PostgreSQL", "Firebase", "MongoDB", "MySQL", "Redis", "SQLite", "Supabase", "DynamoDB"] },
+  { group: "Cloud / DevOps", tags: ["AWS EC2", "AWS S3", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Vercel", "Nginx", "Linux"] },
 ];

@@ -3,12 +3,14 @@ import { TermReplay } from "@/components/TermReplay";
 import { Reveal, RevealNow, RuleDraw } from "@/components/Reveal";
 import { CIWhiskerBar } from "@/components/CIWhiskerBar";
 import {
+  CLIENT_APPS,
   EXPERIENCE,
   LINKS,
   METHOD_ROWS,
   PROJECTS,
   RECORDINGS,
   REGISTER,
+  SKILLS,
 } from "@/data/site";
 
 /** Legal-brief exhibit citation — always a real anchor into the register. */
@@ -70,7 +72,8 @@ export default function Page() {
                 Native, and native apps. In 2026: seven open-source projects
                 <E id="e2" /> forming the testing &amp; safety layer for on-device
                 models. ~500 tests<E id="e1" />, two ecosystems, one capture
-                format<E id="e3" /> — and every number on this page is a citation.
+                format<E id="e3" />. Before that: 14 client apps shipped, two acquired by
+                investors<E id="e13" /> — and every number on this page is a citation.
               </p>
               <RevealNow delay={0.06} className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -258,7 +261,7 @@ export default function Page() {
                   <div>
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                       <h3 className="text-lg font-medium">{item.role}</h3>
-                      <span className="text-muted">· {item.org}</span>
+                      <span className="text-muted">· {item.org} — {item.loc}</span>
                       <span className={TAG_STYLE}>{item.badge}</span>
                     </div>
                     <p className="prose-measure mt-1.5 leading-[1.7] text-muted">{item.line}</p>
@@ -274,8 +277,87 @@ export default function Page() {
           </div>
         </Section>
 
-        {/* 07 · HIRE */}
-        <Section id="hire" eyebrow="Section 07 — Availability" title="Hiring for on-device AI or evals engineering?">
+
+        {/* 07 · SHIPPED APPS */}
+        <Section id="apps" eyebrow="Section 07 — Shipped apps · 14 delivered · 2 acquired" title="Shipped apps, 2022–2026">
+          <Reveal className="mt-6">
+            <p className="prose-measure text-[1.0625rem] leading-[1.7] text-muted">
+              The client record behind the research: fourteen production apps
+              across healthcare, fintech, construction, travel, legal, and
+              education — two of them acquired by investors.<E id="e13" /> Tap
+              any row for the full brief.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            {CLIENT_APPS.map((app) => (
+              <Reveal key={app.name}>
+                <details className="group border-b border-rule first:border-t">
+                  <summary className="flex min-h-[44px] cursor-pointer list-none flex-wrap items-baseline gap-x-3 gap-y-1 py-4 transition-colors hover:bg-rule/30 [&::-webkit-details-marker]:hidden">
+                    <span className="font-mono text-[12px] text-muted">{app.year}</span>
+                    <h3 className="text-lg font-medium">{app.name}</h3>
+                    {app.acquired && (
+                      <span className="rounded bg-verify px-1.5 py-0.5 font-mono text-[10px] font-medium tracking-wider text-white">
+                        ACQUIRED
+                      </span>
+                    )}
+                    <span className={TAG_STYLE}>{app.cat}</span>
+                    <span className="hidden font-mono text-[11px] text-muted sm:inline">{app.role}</span>
+                    <span className="ml-auto font-mono text-[12px] text-muted transition-transform group-open:rotate-90">›</span>
+                    <span className="w-full text-[15px] leading-relaxed text-muted sm:w-auto sm:flex-1 sm:basis-full">
+                      {app.desc}
+                    </span>
+                  </summary>
+                  <div className="grid gap-6 pb-6 pt-1 sm:grid-cols-[1.5fr_1fr]">
+                    <div>
+                      <p className="prose-measure leading-[1.7] text-muted">{app.full}</p>
+                      <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
+                        {app.features.map((feature) => (
+                          <li key={feature} className="flex gap-2 text-[14px] leading-relaxed text-muted">
+                            <span aria-hidden className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-verify" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="flex flex-wrap gap-1.5">
+                        {app.tech.map((tech) => (
+                          <span key={tech} className={TAG_STYLE}>{tech}</span>
+                        ))}
+                      </p>
+                      {app.github && (
+                        <p className="mt-4">
+                          <a className="verify-link font-mono text-[12px]" href={app.github} target="_blank" rel="noopener noreferrer">
+                            repo ↗
+                          </a>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </Section>
+
+        {/* 08 · CAPABILITIES */}
+        <Section id="skills" eyebrow="Section 08 — Capabilities" title="The stack, in full">
+          <div className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SKILLS.map((group) => (
+              <Reveal key={group.group}>
+                <h3 className="eyebrow mb-2.5">{group.group}</h3>
+                <p className="flex flex-wrap gap-1.5">
+                  {group.tags.map((tag) => (
+                    <span key={tag} className={TAG_STYLE}>{tag}</span>
+                  ))}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Section>
+
+        {/* 09 · HIRE */}
+        <Section id="hire" eyebrow="Section 09 — Availability" title="Hiring for on-device AI or evals engineering?">
           <Reveal className="mt-8 max-w-2xl">
             <p className="prose-measure text-[1.0625rem] leading-[1.7] text-muted">
               I fit teams building on-device AI features, AI-evals
@@ -312,7 +394,7 @@ export default function Page() {
         </Section>
 
         {/* 08 · REGISTER */}
-        <Section id="register" eyebrow="Appendix A — Evidence register · 12 entries" title="Appendix A — Evidence register">
+        <Section id="register" eyebrow="Appendix A — Evidence register · 13 entries" title="Appendix A — Evidence register">
           <Reveal className="mt-6">
             <p className="text-xl italic">
               Every claim above is numbered. Every number below is a link.

@@ -102,7 +102,12 @@ export function TermReplay({
         </a>
       </div>
       <div className="term-scroll overflow-x-auto px-4 py-3.5">
-        <pre className="min-w-max font-mono text-[12.5px] leading-[1.7] sm:text-[13px]">
+        {/* Height is reserved for the FULL recording from the first frame —
+            a replay must never shift the layout below it (zero CLS). */}
+        <pre
+          className="min-w-max font-mono text-[12.5px] leading-[1.7] sm:text-[13px]"
+          style={{ minHeight: `${total * 1.7}em` }}
+        >
           {recording.lines.slice(0, shown).map((line, index) => (
             <div
               key={index}
