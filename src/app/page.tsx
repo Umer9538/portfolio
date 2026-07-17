@@ -357,13 +357,15 @@ export default function Page() {
         </Section>
 
         {/* 09 · HIRE */}
-        <Section id="hire" eyebrow="Section 09 — Availability" title="Hiring for on-device AI or evals engineering?">
+        <Section id="contact" eyebrow="Section 09 — Contact" title="Let\u2019s work together">
           <Reveal className="mt-8 max-w-2xl">
             <p className="prose-measure text-[1.0625rem] leading-[1.7] text-muted">
-              I fit teams building on-device AI features, AI-evals
-              infrastructure, or mobile platform tooling. I ship the whole
-              stack — Flutter, React Native, Swift, TypeScript — and I test the
-              way this page reads: claims first, evidence attached.
+              I take on mobile app development end to end — Flutter, React
+              Native, and native iOS/Android — plus full-stack web and AI
+              features. Fourteen shipped client apps say I deliver; if your
+              team is building on-device AI or evals infrastructure, that is
+              my specialty on top. Either way, I work the way this page
+              reads: claims first, evidence attached.
             </p>
             <p className="mt-4 font-mono text-[12px] text-ink">
               working remotely, worldwide · based in Lahore, Pakistan

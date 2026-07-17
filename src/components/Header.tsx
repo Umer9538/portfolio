@@ -30,10 +30,10 @@ export function Header() {
         </nav>
 
         <a
-          href="#hire"
+          href="#contact"
           className="ml-auto rounded-md bg-verify px-3.5 py-1.5 font-mono text-[12px] font-medium text-white transition-colors hover:bg-verify-hover md:ml-0"
         >
-          Hire me
+          Contact
         </a>
 
         <button
