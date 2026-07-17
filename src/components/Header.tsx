@@ -9,6 +9,7 @@ const NAV = [
   { href: "#record", label: "Prior record" },
   { href: "#apps", label: "Apps" },
   { href: "#register", label: "Register" },
+  { href: "/Muhammad-Umer-CV.pdf", label: "CV ↓" },
 ];
 
 export function Header() {

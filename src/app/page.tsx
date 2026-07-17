@@ -380,6 +380,13 @@ export default function Page() {
               >
                 Email Umer
               </a>
+              <a
+                href="/Muhammad-Umer-CV.pdf"
+                download
+                className="rounded-md border border-rule px-5 py-2.5 font-mono text-[13px] text-ink transition-colors hover:border-verify hover:text-verify"
+              >
+                Download CV ↓
+              </a>
             </div>
             <p className="mt-5 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[12px]">
               <a className="verify-link" href={LINKS.github} target="_blank" rel="noopener noreferrer">
