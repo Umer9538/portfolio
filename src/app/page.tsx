@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { ContactForm } from "@/components/ContactForm";
 import { TermReplay } from "@/components/TermReplay";
 import { Reveal, RevealNow, RuleDraw } from "@/components/Reveal";
 import { CIWhiskerBar } from "@/components/CIWhiskerBar";
@@ -387,6 +388,9 @@ export default function Page() {
               >
                 Download CV ↓
               </a>
+            </div>
+            <div className="no-print mt-6">
+              <ContactForm />
             </div>
             <p className="mt-5 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[12px]">
               <a className="verify-link" href={LINKS.github} target="_blank" rel="noopener noreferrer">
