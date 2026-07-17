@@ -108,3 +108,47 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Print: the dossier prints like a dossier ───────────────────────── */
+@media print {
+  header,
+  .term-scrubber,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .term-line {
+    opacity: 1 !important;
+  }
+  section {
+    break-inside: avoid-page;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .verify-link {
+    color: #0e7c5b;
+  }
+}
+
+/* Skip link: hidden until keyboard-focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-verify);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 8px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.skip-link:focus {
+  left: 0;
+}

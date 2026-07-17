@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV = [
   { href: "#findings", label: "Findings" },
@@ -13,6 +13,16 @@ const NAV = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  // Printing the dossier expands every app brief first.
+  useEffect(() => {
+    const expand = () =>
+      document.querySelectorAll("details").forEach((d) => {
+        d.open = true;
+      });
+    window.addEventListener("beforeprint", expand);
+    return () => window.removeEventListener("beforeprint", expand);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-rule bg-paper/90 backdrop-blur-sm">

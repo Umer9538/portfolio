@@ -56,7 +56,7 @@ export default function Page() {
   return (
     <div id="top">
       <Header />
-      <main>
+      <main id="main">
         {/* 01 · COVER */}
         <section className="mx-auto max-w-5xl px-5 pb-16 pt-14 sm:pt-20">
           <div className="grid items-start gap-10 lg:grid-cols-[58fr_42fr]">
@@ -271,7 +271,7 @@ export default function Page() {
             ))}
             <Reveal>
               <p className="mt-5 font-mono text-[12px] text-muted">
-                FAST NUCES — Dean&apos;s List (top 10%) · Teaching assistant, 600+ students<E id="e12" />
+                FAST NUCES — Dean&apos;s List (top 10%) · Teaching assistant, 600+ students · FCAP Club admin head, 100+ members<E id="e12" />
               </p>
             </Reveal>
           </div>
@@ -442,7 +442,22 @@ export default function Page() {
         {/* 09 · COLOPHON */}
         <footer className="mx-auto max-w-5xl px-5 pb-14 pt-4">
           <RuleDraw />
-          <p className="mt-8 font-mono text-[11px] leading-[1.9] text-muted">
+          <p className="mt-8 flex flex-wrap gap-x-5 font-mono text-[11px]">
+            {[
+              { label: "golden_lens", href: LINKS.pub.golden_lens },
+              { label: "llm_replay_eval", href: LINKS.pub.llm_replay_eval },
+              { label: "redact", href: LINKS.pub.redact },
+              { label: "vouch", href: LINKS.pub.vouch },
+              { label: "underfoot", href: LINKS.underfootSite },
+              { label: "unswayed·swift", href: LINKS.repos.unswayed },
+              { label: "unswayed·npm", href: LINKS.npm.unswayed },
+            ].map((item) => (
+              <a key={item.label} className="verify-link inline-block py-1.5" href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.label}
+              </a>
+            ))}
+          </p>
+          <p className="mt-5 font-mono text-[11px] leading-[1.9] text-muted">
             Set in Newsreader &amp; SF Mono. Built with Next.js + Tailwind. No
             analytics. Every terminal on this page replays output published in
             the projects&apos; own repositories — sources linked in Appendix A.
