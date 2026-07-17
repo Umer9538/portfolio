@@ -366,7 +366,7 @@ export default function Page() {
               way this page reads: claims first, evidence attached.
             </p>
             <p className="mt-4 font-mono text-[12px] text-ink">
-              remote (any timezone overlap) · open to visa relocation — US · CA · EU · AU · NZ
+              remote, any timezone. For the right team, relocation is on the table.
             </p>
             <div className="mt-6">
               <TermReplay recording={RECORDINGS.hireEmail} />

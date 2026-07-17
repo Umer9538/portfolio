@@ -23,7 +23,7 @@ export function Header() {
 
         <span className="hidden items-center gap-2 font-mono text-[11px] text-muted lg:flex">
           <i className="h-1.5 w-1.5 rounded-full bg-verify" aria-hidden />
-          Open to remote &amp; relocation — US · CA · EU · AU/NZ
+          The testing &amp; safety layer for on-device AI
         </span>
 
         <nav className="ml-auto hidden items-center gap-5 md:flex" aria-label="Sections">
@@ -66,7 +66,7 @@ export function Header() {
           ))}
           <p className="flex items-center gap-2 py-3 font-mono text-[11px] text-muted">
             <i className="h-1.5 w-1.5 rounded-full bg-verify" aria-hidden />
-            Open to remote &amp; relocation — US · CA · EU · AU/NZ
+            The testing &amp; safety layer for on-device AI
           </p>
         </nav>
       )}

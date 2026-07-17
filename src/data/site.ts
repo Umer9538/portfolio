@@ -116,7 +116,7 @@ export const RECORDINGS: Record<string, Recording> = {
     verifyHref: "mailto:muhammadumer7574@gmail.com",
     lines: [
       { t: 0, text: "$ open mailto:muhammadumer7574@gmail.com", c: "prompt" },
-      { t: 250, text: "→ replies within 24h — remote (any tz overlap) or relocation", c: "pass" },
+      { t: 250, text: "→ replies within 24h", c: "pass" },
     ],
   },
 };
