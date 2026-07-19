@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Muhammad Umer — Mobile Engineer · On-Device AI Testing & Evals",
   description:
-    "Mobile engineer, 3+ years of Flutter, React Native and native apps. Author of seven open-source projects forming the testing & safety layer for on-device AI — ~500 tests, two ecosystems, one capture format. Every claim cited.",
+    "Mobile engineer, 5+ years of Flutter, React Native and native apps. Author of seven open-source projects forming the testing & safety layer for on-device AI — ~500 tests, two ecosystems, one capture format. Every claim cited.",
   keywords: [
     "mobile engineer",
     "on-device AI",

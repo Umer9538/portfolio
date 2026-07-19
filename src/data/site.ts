@@ -252,7 +252,7 @@ export const REGISTER: RegisterEntry[] = [
   { id: "e9", no: "E9", claim: "Wilson + Newcombe statistics implemented twice (Swift & TypeScript) against shared literature fixtures", artifact: "Stats.swift / stats.ts + matching test values", href: LINKS.repos.unswayed, linkLabel: "unswayed: Sources/ParityCore" },
   { id: "e10", no: "E10", claim: "Adversarial audit rounds with executable probes; dozens of confirmed defects fixed and locked as regression tests", artifact: "commit history: audit-fix commits per repo", href: LINKS.github, linkLabel: "audit commits" },
   { id: "e11", no: "E11", claim: "golden_lens attributes a visual diff to the owning widget and source line", artifact: "attribution engine + report schema", href: LINKS.pub.golden_lens, linkLabel: "pub.dev/packages/golden_lens" },
-  { id: "e12", no: "E12", claim: "3+ years shipping production mobile apps (fintech, healthcare/NFC, SaaS)", artifact: "client work & app record", href: LINKS.linkedin, linkLabel: "LinkedIn" },
+  { id: "e12", no: "E12", claim: "5+ years shipping production mobile apps (2020–2026: fintech, healthcare/NFC, SaaS)", artifact: "client work & app record", href: LINKS.linkedin, linkLabel: "LinkedIn" },
   { id: "e13", no: "E13", claim: "14 client apps shipped 2022–2026; the AI learning platform and maternity-care bot were acquired by investors (built at DriftMeta)", artifact: "app briefs in Section 07 + work history", href: LINKS.linkedin, linkLabel: "LinkedIn" },
 ];
 
@@ -268,36 +268,28 @@ export const METHOD_ROWS = [
 
 export const EXPERIENCE = [
   {
-    period: "2025 — present",
-    role: "Senior Mobile App Developer",
+    period: "Aug 2025 — present",
+    role: "Software Engineer — Mobile",
     org: "Infinitiv.AI",
-    loc: "Lahore",
-    line: "Production mobile apps with Flutter, React Native, and native modules — BLE, WebSocket, speech-to-text — deployed on AWS with Docker.",
-    badge: "Flutter · RN · AWS · BLE",
+    loc: "Lahore, hybrid",
+    line: "End-to-end production apps in Flutter and React Native — Clean Architecture, Bloc/Riverpod, native Kotlin/Java/Swift modules for BLE, NFC and background services; live translation, speech-to-text/TTS, WebSocket streaming; APIs on AWS EC2 with Docker and CI/CD.",
+    badge: "Flutter · RN · native · AWS",
   },
   {
-    period: "2025 — 2026",
-    role: "App Developer",
+    period: "May — Oct 2025",
+    role: "Mobile App Developer",
     org: "DriftMeta",
-    loc: "Remote",
-    line: "Built two investor-acquired products end to end: an AI learning platform (LangChain/OpenAI, live WebRTC classrooms, AI code evaluation) and a maternity-care AI chatbot.",
+    loc: "remote, contract",
+    line: "Built and scaled two investor-acquired products end to end: an AI learning app (AI courseware, real-time code evaluation — Flask, LangChain, OpenAI, WebRTC) and a maternity-care chatbot with a structured medical knowledge base (Flutter, Node.js, Firebase).",
     badge: "Flutter · LangChain · OpenAI",
   },
   {
-    period: "2024 — 2025",
-    role: "Senior Full Stack Engineer",
+    period: "Nov 2020 — Apr 2025",
+    role: "Mobile Application Developer → Full Stack Engineer",
     org: "Vireon Solutions",
-    loc: "Islamabad",
-    line: "AI-driven apps with TensorFlow, PyTorch and LangChain — NLP, speech recognition, and RAG architectures in production.",
-    badge: "TensorFlow · PyTorch · RAG",
-  },
-  {
-    period: "2023 — 2024",
-    role: "Associate Full Stack Engineer",
-    org: "Vireon Solutions",
-    loc: "Islamabad",
-    line: "Web and mobile apps with Flutter, React Native and React.js — AI integration and performance optimization.",
-    badge: "Flutter · RN · React.js",
+    loc: "Islamabad, remote · promoted 2024",
+    line: "Joined as a junior in first year of university; 4.5 years across AI-driven mobile apps (NLP chat, speech recognition, TTS — TensorFlow, PyTorch, LangChain), mobile-facing APIs in Node.js/FastAPI with Redis, RAG architectures (FAISS, ChromaDB), and AWS/Heroku deployments.",
+    badge: "Flutter · RN · RAG · FastAPI",
   },
 ];
 
@@ -319,7 +311,7 @@ export const CLIENT_APPS: ClientApp[] = [
   { year: "2024", name: "AI Learning Platform", cat: "EdTech / AI", role: "Full Stack Developer", desc: "AI courseware with real-time coding evaluation.", full: "AI education platform adapting to each student: real-time code evaluation, live video classrooms, gamification. Acquired after strong beta engagement.", features: ["Adaptive learning paths", "AI code evaluation", "Live WebRTC classrooms", "Progress analytics", "Auto quiz generation", "Gamified leaderboards"], tech: ["Flutter", "LangChain", "OpenAI", "WebRTC"], acquired: true },
   { year: "2024", name: "Maternity Care Bot", cat: "Healthcare / AI", role: "Full Stack Developer", desc: "AI medical assistant for expecting mothers.", full: "AI chatbot for pregnant mothers — health advice, symptom tracking, appointments, and community, built for an emerging-market healthcare gap.", features: ["Maternal health AI chatbot", "Pregnancy milestone tracking", "Symptom severity alerts", "Doctor appointments", "Meal planning", "Community forum"], tech: ["Flutter", "Node.js", "Firebase"], acquired: true },
   { year: "2024", name: "BuildBuddy", cat: "Construction / SaaS", role: "Lead Flutter Developer", desc: "Construction management with live budgets, Stripe payments, and multi-role collaboration.", full: "All-in-one construction app for homeowners and contractors: budgets, milestones, a contractor marketplace, and Stripe payments with role-based dashboards.", features: ["Real-time budget tracking", "Contractor marketplace", "Milestone-based Stripe payments", "Photo progress docs", "Google Maps integration", "Push notification alerts"], tech: ["Flutter", "Firebase", "Stripe", "Maps"], github: "https://github.com/Umer9538/budgetBot" },
-  { year: "2024", name: "Mershad", cat: "Travel / AI", role: "Mobile Developer", desc: "AI travel companion for Saudi Arabia — Gemini itineraries and offline maps.", full: "Intelligent travel companion for Saudi Arabia using Gemini 1.5 Flash: personalized itineraries, hotel booking, an AI chatbot, and offline navigation across 5 cities.", features: ["Gemini AI itineraries", "Hotel & experience booking", "Offline maps with navigation", "Multi-language support", "Emergency SOS", "Cultural recommendations"], tech: ["Flutter", "Gemini API", "Google Maps"] },
+  { year: "2024", name: "Mershed", cat: "Travel / AI", role: "Mobile Developer", desc: "AI travel companion for Saudi Arabia — Gemini itineraries and offline maps.", full: "Intelligent travel companion for Saudi Arabia using Gemini 1.5 Flash: personalized itineraries, hotel booking, an AI chatbot, and offline navigation across 5 cities.", features: ["Gemini AI itineraries", "Hotel & experience booking", "Offline maps with navigation", "Multi-language support", "Emergency SOS", "Cultural recommendations"], tech: ["Flutter", "Gemini API", "Google Maps"] },
   { year: "2024", name: "CloudKey", cat: "Hospitality", role: "Backend Developer", desc: "Hotel management with NFC digital keys and multi-language support.", full: "Cloud hotel management replacing physical keys with NFC/barcode digital keys — automated check-in, reservation management, Docker deployment.", features: ["NFC/barcode digital keys", "Reservation management", "Multi-factor auth", "Multi-language support", "Payment processing", "Docker deployment"], tech: ["Cloud", "NFC", "Docker", "REST APIs"], github: "https://github.com/Umer9538/CloudKey" },
   { year: "2024", name: "ServiceMate", cat: "SaaS", role: "Full Stack Developer", desc: "White-label booking SaaS for salons, clinics, and studios.", full: "White-label booking SaaS: custom booking pages, automated reminders, payments, and CRM.", features: ["Custom booking pages", "Automated reminders", "Staff scheduling", "Invoicing", "CRM with history", "Revenue analytics"], tech: ["TypeScript", "Next.js", "SaaS"], github: "https://github.com/Umer9538/ServiceMate" },
   { year: "2024", name: "GroceryMate", cat: "Lifestyle", role: "Flutter Developer", desc: "Smart grocery list with barcode scanning and family sharing.", full: "Scan barcodes, compare prices, share lists with family in real time, with AI suggestions from purchase history.", features: ["Barcode scanning", "Family list sharing", "Price comparison", "Spending analytics", "Smart suggestions", "Aisle categorization"], tech: ["Flutter", "Firebase", "Barcode API"] },

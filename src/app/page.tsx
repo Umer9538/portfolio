@@ -69,7 +69,7 @@ export default function Page() {
                 On-device AI fails quietly. I&nbsp;build the tools that catch&nbsp;it.
               </h1>
               <p className="prose-measure mt-6 text-[1.0625rem] leading-[1.7] text-muted">
-                Muhammad Umer — mobile engineer, 3+ years shipping Flutter, React
+                Muhammad Umer — mobile engineer, 5+ years shipping Flutter, React
                 Native, and native apps. In 2026: seven open-source projects
                 <E id="e2" /> forming the testing &amp; safety layer for on-device
                 models. ~500 tests<E id="e1" />, two ecosystems, one capture
@@ -253,7 +253,7 @@ export default function Page() {
         </Section>
 
         {/* 06 · PRIOR RECORD */}
-        <Section id="record" eyebrow="Section 06 — Prior record · 2022–2026" title="Prior record: 3+ years shipping">
+        <Section id="record" eyebrow="Section 06 — Prior record · 2020–2026" title="Prior record: 5+ years shipping">
           <div className="mt-8">
             {EXPERIENCE.map((item) => (
               <Reveal key={item.line}>
@@ -272,7 +272,7 @@ export default function Page() {
             ))}
             <Reveal>
               <p className="mt-5 font-mono text-[12px] text-muted">
-                FAST NUCES — Dean&apos;s List (top 10%) · Teaching assistant, 600+ students · FCAP Club admin head, 100+ members<E id="e12" />
+                FAST NUCES — BS Computer Science, Major in Generative AI · Dean&apos;s List ×3 (top 10%) · TA for 600+ students · FCAP admin head, 100+ members · 1st place, DAIRA Software Sprint 2024 · 3rd place, GIKI Cross-Platform Hackathon 2025<E id="e12" />
               </p>
             </Reveal>
           </div>
@@ -280,7 +280,7 @@ export default function Page() {
 
 
         {/* 07 · SHIPPED APPS */}
-        <Section id="apps" eyebrow="Section 07 — Shipped apps · 14 delivered · 2 acquired" title="Shipped apps, 2022–2026">
+        <Section id="apps" eyebrow="Section 07 — Shipped apps · 14 delivered · 2 acquired" title="Shipped apps, 2020–2026">
           <Reveal className="mt-6">
             <p className="prose-measure text-[1.0625rem] leading-[1.7] text-muted">
               The client record behind the research: fourteen production apps
@@ -369,7 +369,7 @@ export default function Page() {
               reads: claims first, evidence attached.
             </p>
             <p className="mt-4 font-mono text-[12px] text-ink">
-              working remotely, worldwide · based in Lahore, Pakistan
+              working remotely, worldwide · based in Faisalabad, Pakistan
             </p>
             <div className="mt-6">
               <TermReplay recording={RECORDINGS.hireEmail} />
