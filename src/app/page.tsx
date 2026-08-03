@@ -73,7 +73,7 @@ export default function Page() {
                 Native, and native apps. In 2026: seven open-source projects
                 <E id="e2" /> forming the testing &amp; safety layer for on-device
                 models. ~500 tests<E id="e1" />, two ecosystems, one capture
-                format<E id="e3" />. Before that: 14 client apps shipped, two acquired by
+                format<E id="e3" />. Alongside: 17 client apps shipped, two acquired by
                 investors<E id="e13" /> — and every number on this page is a citation.
               </p>
               <RevealNow delay={0.06} className="mt-8 flex flex-wrap gap-3">
@@ -280,10 +280,10 @@ export default function Page() {
 
 
         {/* 07 · SHIPPED APPS */}
-        <Section id="apps" eyebrow="Section 07 — Shipped apps · 14 delivered · 2 acquired" title="Shipped apps, 2020–2026">
+        <Section id="apps" eyebrow="Section 07 — Shipped apps · 17 delivered · 2 acquired" title="Shipped apps, 2020–2026">
           <Reveal className="mt-6">
             <p className="prose-measure text-[1.0625rem] leading-[1.7] text-muted">
-              The client record behind the research: fourteen production apps
+              The client record behind the research: seventeen production apps
               across healthcare, fintech, construction, travel, legal, and
               education — two of them acquired by investors.<E id="e13" /> Tap
               any row for the full brief.
