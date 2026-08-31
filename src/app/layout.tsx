@@ -16,7 +16,7 @@ const jetbrains = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const SITE_URL = "https://personalportfolio-main.vercel.app";
+const SITE_URL = "https://umer9538.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
